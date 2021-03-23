@@ -1,0 +1,21 @@
+.profile{
+	display: flex;
+}
+
+.profile-info{
+}
+
+.profile-info__item{
+	margin: 0 16px 4px;
+}
+
+.profile-info__item-title{
+	font-weight: bold;
+	margin: 0 var(--padding-base-hor) var(--padding-base-ver);
+}
+
+.avatar img {
+	height: 150px;
+	width: 150px;
+	border-radius: 150px;
+}
