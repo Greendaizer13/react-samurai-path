@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Post = () => {
+export interface PostProps {
+	text: string,
+}
+
+const Post = (props: PostProps) => {
 	return (
-		<div>
-			Example of post text
+		<div className={'block'}>
+			{props.text}
 		</div>
 	);
 };

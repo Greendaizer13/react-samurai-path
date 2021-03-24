@@ -1,0 +1,22 @@
+.app-header {
+	background-color: white;
+	height: var(--header-height);
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.app-header__content {
+	display: flex;
+	align-items: center;
+	width: calc(var(--nav-width) + var(--conent-width));
+}
+
+.app-header__title {
+	font-weight: bold;
+	font-size: large;
+}
+
+.app-header img {
+	height: 40px;
+}

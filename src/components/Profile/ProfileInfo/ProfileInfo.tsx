@@ -11,8 +11,10 @@ const ProfileInfo = () => {
 					alt={'avatar'}/>
 			</div>
 			<div>
-				<div className={styles['profile-info__title']}>Name</div>
-				<ProfileInfoItem/>
+				<div className={styles['profile-info__title']}>Frog's Lag</div>
+				<ProfileInfoItem title='Education' value='KubGu maestro of IT'/>
+				<ProfileInfoItem title='Date of Birth' value='09.01.1994'/>
+				<ProfileInfoItem title='City' value='Krasnodar'/>
 			</div>
 		</div>
 	);

@@ -6,17 +6,14 @@ import Post from '../Post/Post';
 const Profile = () => {
 	return (
 		<div>
-			<div className={styles['block']}>
+			<div className={'block'}>
 				<ProfileInfo/>
 			</div>
-			<div className={styles['block']}>
-				<div className={styles.content__item}>
-					New post form
-				</div>
+			<div className={'block'}>
+				New post form. Temporary empty
 			</div>
-			<div className={styles['block']}>
-				<Post/>
-			</div>
+			<Post text='Hey! I get started React!'/>
+			<Post text='I managed props! Probably :3'/>
 		</div>
 	);
 };
