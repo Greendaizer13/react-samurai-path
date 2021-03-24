@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './Post.module.css';
 
 const Post = () => {
 	return (
-		<div className={styles['content__item']}>
+		<div>
 			Example of post text
 		</div>
 	);

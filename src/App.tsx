@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
-import Content from './components/Сontent/Content';
+import Profile from './components/Profile/Profile';
 
 function App() {
 	return (
@@ -10,7 +10,9 @@ function App() {
 			<Header/>
 			<div className={'app-body'}>
 				<NavBar/>
-				<Content/>
+				<div className={'content'}>
+					<Profile/>
+				</div>
 			</div>
 		</div>
 	);

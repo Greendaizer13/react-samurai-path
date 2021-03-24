@@ -1,18 +1,21 @@
 import React from 'react';
 import styles from './Profile.module.css';
-import ProfileItem from './ProfileItem/ProfileItem';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
+import Post from '../Post/Post';
 
 const Profile = () => {
 	return (
-		<div className={styles['profile']}>
-			<div className={styles['avatar']}>
-				<img
-					src={'https://yt3.ggpht.com/a/AATXAJwcjuvfzamlEQqn3uFmAol0Q_zTloG96JtpB1de=s900-c-k-c0xffffffff-no-rj-mo'}
-					alt={'avatar'}/>
+		<div>
+			<div className={styles['block']}>
+				<ProfileInfo/>
 			</div>
-			<div>
-				<div className={styles['profile-info__item-title']}>Name</div>
-				<ProfileItem/>
+			<div className={styles['block']}>
+				<div className={styles.content__item}>
+					New post form
+				</div>
+			</div>
+			<div className={styles['block']}>
+				<Post/>
 			</div>
 		</div>
 	);
