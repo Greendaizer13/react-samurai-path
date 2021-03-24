@@ -1,6 +1,7 @@
 import React from 'react';
-import Profile from '../profile/Profile';
+import Profile from '../Profile/Profile';
 import styles from './Content.module.css';
+import Post from '../Post/Post';
 
 const Content = () => {
 	return <div className={styles.content}>
@@ -10,15 +11,7 @@ const Content = () => {
 		<div className={styles.content__item}>
 			New post form
 		</div>
-		<div className={styles.content__item}>
-			Example of post text first
-		</div>
-		<div className={styles.content__item}>
-			Example of post text
-		</div>
-		<div className={styles.content__item}>
-			Example of post text last
-		</div>
+		<Post/>
 	</div>
 }
 

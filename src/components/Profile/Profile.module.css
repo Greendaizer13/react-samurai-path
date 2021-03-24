@@ -2,13 +2,6 @@
 	display: flex;
 }
 
-.profile-info{
-}
-
-.profile-info__item{
-	margin: 0 16px 4px;
-}
-
 .profile-info__item-title{
 	font-weight: bold;
 	margin: 0 var(--padding-base-hor) var(--padding-base-ver);
