@@ -2,6 +2,6 @@
 	width: var(--nav-width);
 }
 
-.nav__item{
+.nav__item {
 	padding: var(--padding-small);
 }

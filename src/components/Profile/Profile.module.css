@@ -1,8 +1,8 @@
-.profile{
+.profile {
 	display: flex;
 }
 
-.profile-info__item-title{
+.profile-info__item-title {
 	font-weight: bold;
 	margin: 0 var(--padding-base-hor) var(--padding-base-ver);
 }

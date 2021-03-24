@@ -3,7 +3,7 @@
 	height: 100%;
 }
 
-.content__item{
+.content__item {
 	background-color: white;
 	padding: var(--padding-base-ver) var(--padding-base-hor);
 	margin-bottom: 10px;
