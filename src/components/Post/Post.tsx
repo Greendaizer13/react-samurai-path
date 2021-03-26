@@ -1,10 +1,10 @@
 import React from 'react';
 
-export interface PostProps {
+export interface IPost {
 	text: string,
 }
 
-const Post = (props: PostProps) => {
+const Post : React.FC<IPost> = (props) => {
 	return (
 		<div className={'block'}>
 			{props.text}
