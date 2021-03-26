@@ -18,6 +18,7 @@ code {
 html {
 	--color-background-base: #EDEEF0;
 	--color-base: darkgray;
+	--color-text-base: black;
 
 	--padding-base-hor: 16px;
 	--padding-base-ver: 8px;
@@ -33,4 +34,9 @@ html {
 	padding: var(--padding-base-ver) var(--padding-base-hor);
 	margin-bottom: 10px;
 	border-radius: 10px;
+}
+
+a {
+	color: var(--color-text-base);
+	text-decoration: none;
 }
