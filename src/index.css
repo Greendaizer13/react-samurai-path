@@ -6,8 +6,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: var(--color-background-base);
-	font-family: 'Cormorant Unicase', serif;
-	font-size: large;
+	font-family: var(--font-family-text);
+	font-size: 16px;
 }
 
 code {
@@ -27,13 +27,19 @@ html {
 	--header-height: 50px;
 	--conent-width: 600px;
 	--nav-width: 120px;
+
+	--margin-block-base: 10px;
+
+	--border-radius-block: 10px;
+
+	--font-family-text: 'Source Serif Pro', serif;
 }
 
 .block {
 	background-color: white;
 	padding: var(--padding-base-ver) var(--padding-base-hor);
-	margin-bottom: 10px;
-	border-radius: 10px;
+	margin-bottom: var(--margin-block-base);
+	border-radius: var(--border-radius-block);
 }
 
 a {

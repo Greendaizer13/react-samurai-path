@@ -14,9 +14,9 @@ function App() {
 				<div className={'app-body'}>
 					<NavBar/>
 					<div className={'content'}>
-						<Route component={Profile} exact path={'/'}/>
 						<Route component={Profile} path={'/profile'}/>
 						<Route component={Messages} path={'/messages'}/>
+						<Route component={Profile} exact path={'/'}/>
 					</div>
 				</div>
 			</div>
