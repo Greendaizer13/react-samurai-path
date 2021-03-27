@@ -1,0 +1,6 @@
+.dialogs {
+	display: flex;
+	width: var(--dialogs-width);
+
+	flex-direction: column;
+}

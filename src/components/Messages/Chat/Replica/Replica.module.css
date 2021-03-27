@@ -1,0 +1,33 @@
+.replica {
+	display: flex;
+}
+
+.replica__item {
+	margin: var(--padding-small-ver) var(--padding-small-ver);
+	align-items: center;
+	display: flex;
+	background-color: var(--color-background-base);
+	border-radius: var(--border-radius-block);
+}
+
+.replica__item--reflexed{
+	direction: rtl;
+}
+
+.replica--text {
+	padding: var(--padding-small-ver) var(--padding-small-hor);
+	max-width: 60%;
+	direction: ltr;
+}
+
+.replica__avatar {
+	display: flex;
+	align-items: flex-end;
+}
+
+.avatar img {
+	height: var(--avatar-replica-size);
+	width: var(--avatar-replica-size);
+	border-radius: var(--border-radius-avatar);
+	margin: var(--padding-small-ver) var(--padding-small-hor);
+}

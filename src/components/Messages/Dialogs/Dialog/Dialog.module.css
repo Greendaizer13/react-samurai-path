@@ -1,0 +1,16 @@
+.dialog {
+	height: var(--dialog-height);
+	display: flex;
+	align-items: center;
+	margin: var(--padding-small-ver) var(--padding-small-hor) var(--padding-small-hor) 0;
+}
+
+.avatar img {
+	height: var(--avatar-dialog-size);
+	width: var(--avatar-dialog-size);
+	border-radius: var(--border-radius-avatar);
+}
+
+.dialog__item {
+	margin: 0 4px;
+}

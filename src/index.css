@@ -22,17 +22,25 @@ html {
 
 	--padding-base-hor: 16px;
 	--padding-base-ver: 8px;
-	--padding-small: 4px;
+	--padding-small-ver: 4px;
+	--padding-small-hor: 12px;
 
-	--header-height: 50px;
-	--conent-width: 600px;
+	--header-height: 52px;
+	--conent-width: 720px;
 	--nav-width: 120px;
+
+	--dialog-height: 64px;
+	--dialogs-width: 220px;
 
 	--margin-block-base: 10px;
 
 	--border-radius-block: 10px;
+	--border-radius-avatar: 150px;
 
 	--font-family-text: 'Source Serif Pro', serif;
+
+	--avatar-replica-size: 36px;
+	--avatar-dialog-size: 52px;
 }
 
 .block {
@@ -46,3 +54,4 @@ a {
 	color: var(--color-text-base);
 	text-decoration: none;
 }
+
