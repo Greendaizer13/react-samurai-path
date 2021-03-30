@@ -5,8 +5,10 @@ import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { IApplicationState } from './redux/state';
+import { MESSAGES_ROUTE, PROFILE_ROUTE } from './core/constants';
 
-function App() {
+const App : React.FC<IApplicationState> = (props) => {
 	return (
 		<BrowserRouter>
 			<div className={'app-wrapper'}>
@@ -14,9 +16,9 @@ function App() {
 				<div className={'app-body'}>
 					<NavBar/>
 					<div className={'content'}>
-						<Route component={Profile} path={'/profile'}/>
-						<Route component={Messages} path={'/messages'}/>
-						<Route component={Profile} exact path={'/'}/>
+						<Route render={() => <Profile user={props.profile.user} posts={props.profile.posts}/>} path={PROFILE_ROUTE}/>
+						<Route render={() => <Messages dialogUsers={props.messages.dialogUsers} messages={props.messages.messages}/>} path={MESSAGES_ROUTE}/>
+						<Route render={() => <Profile user={props.profile.user} posts={props.profile.posts}/>} exact path={'/'}/>
 					</div>
 				</div>
 			</div>

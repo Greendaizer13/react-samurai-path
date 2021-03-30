@@ -1,6 +1,7 @@
 import { IMessage, IUser } from './types';
+import { IPost } from '../components/Post/Post';
 
-export const USERS: IUser[] = [
+export const USERS_DATA: IUser[] = [
 	{
 		id: 0,
 		firstName: 'Tilda',
@@ -37,26 +38,37 @@ export const USERS: IUser[] = [
 	},
 ];
 
-export const MAIN_USER: IUser = {
+export const MAIN_USER_DATA: IUser = {
 	id: 999,
 	firstName: "Frog's Lag",
 	imgUrl: 'https://yt3.ggpht.com/a/AATXAJwcjuvfzamlEQqn3uFmAol0Q_zTloG96JtpB1de=s900-c-k-c0xffffffff-no-rj-mo',
 }
 
-export const DIALOGS: IMessage[][] = [
+export const POSTS_DATA : IPost[] = [
+	{
+		id: 0,
+		text: 'I started React successfully!'
+	},
+	{
+		id: 1,
+		text: 'Export data to state - checked'
+	},
+]
+
+export const DIALOGS_DATA: IMessage[][] = [
 	[
-		{user: USERS[0], text: "Hey! You are awsome!"},
-		{user: MAIN_USER, text: "Oh, Tilda, you are so kind, but thank you"},
-		{user: USERS[0], text: "You deserved it. How are you?"},
-		{user: MAIN_USER, text: "I'm shocked by your compliments. Very long message test. Very long message test. Very long message test. Very long message test. Very long message test."},
+		{user: USERS_DATA[0], text: "Hey! You are awsome!"},
+		{user: MAIN_USER_DATA, text: "Oh, Tilda, you are so kind, but thank you"},
+		{user: USERS_DATA[0], text: "You deserved it. How are you?"},
+		{user: MAIN_USER_DATA, text: "I'm shocked by your compliments. Very long message test. Very long message test. Very long message test. Very long message test. Very long message test."},
 	],
 	[
-		{user: USERS[1], text: "Fuck you"},
-		{user: MAIN_USER, text: "Ok"},
+		{user: USERS_DATA[1], text: "Fuck you"},
+		{user: MAIN_USER_DATA, text: "Ok"},
 	],
 	[
-		{user: USERS[4], text: "I've heard that every second person is a cocksucker. I'am not"},
-		{user: MAIN_USER, text: "Thanks"},
-		{user: USERS[4], text: "U're welcome"},
+		{user: USERS_DATA[4], text: "I've heard that every second person is a cocksucker. I'am not"},
+		{user: MAIN_USER_DATA, text: "Thanks"},
+		{user: USERS_DATA[4], text: "U're welcome"},
 	],
 ]

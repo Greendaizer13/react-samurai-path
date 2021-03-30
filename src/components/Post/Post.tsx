@@ -1,6 +1,7 @@
 import React from 'react';
 
 export interface IPost {
+	id: number,
 	text: string,
 }
 
