@@ -1,16 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './redux/state';
+import { renderAll } from './render';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App profile={state.profile} messages={state.messages} />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+renderAll();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

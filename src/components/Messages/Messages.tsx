@@ -10,13 +10,14 @@ import { MESSAGES_ROUTE } from '../../core/constants';
 export interface IMessages {
 	dialogUsers: IUser[];
 	messages: IMessage[];
+	mainUser: IUser;
 }
 
 const Messages: React.FC<IMessages> = (props) => {
 	return (
 		<div className={classNames('block', styles['messages'])}>
 			<Dialogs users={props.dialogUsers}/>
-			<Route render={() => <Chat messages={props.messages}/>} path={MESSAGES_ROUTE}/>
+			<Route render={() => <Chat mainUser={props.mainUser} messages={props.messages}/>} path={MESSAGES_ROUTE}/>
 		</div>
 	);
 };

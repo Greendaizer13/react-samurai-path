@@ -1,17 +1,22 @@
 import React from 'react';
 import styles from './Replica.module.css';
-import { IMessage } from '../../../../core/types';
+import { IMessage, IUser } from '../../../../core/types';
 import classNames from 'classnames';
-import { MAIN_USER_DATA } from '../../../../core/mocs';
+import { EMPTY_AVATAR_URL } from '../../../../core/constants';
 
-const Replica: React.FC<IMessage> = (props) => {
+export interface IReplica {
+	message: IMessage;
+	mainUser: IUser;
+}
+
+const Replica: React.FC<IReplica> = (props) => {
 	return (
-		<div className={classNames(styles['replica'], props.user.id !== MAIN_USER_DATA.id && styles['replica__item--reflexed'])}>
+		<div className={classNames(styles['replica'], props.message.user.id !== props.mainUser.id && styles['replica__item--reflexed'])}>
 			<div className={classNames(classNames(styles['avatar'], styles['replica__avatar']))}>
-				<img src={props.user.imgUrl ?? 'https://www.flaticon.com/svg/vstatic/svg/2341/2341834.svg?token=exp=1616792586~hmac=91737c6917dfe1f252977dec82836d11'} alt={''}/>
+				<img src={props.message.user.imgUrl ?? EMPTY_AVATAR_URL} alt={''}/>
 			</div>
 			<div className={classNames(styles['replica__item'], styles['replica--text'])}>
-				{props.text}
+				{props.message.text}
 			</div>
 		</div>
 	);

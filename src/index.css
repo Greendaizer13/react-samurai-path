@@ -54,3 +54,20 @@ a {
 	color: var(--color-text-base);
 	text-decoration: none;
 }
+
+textarea {
+	border-radius: var(--border-radius-block);
+	background: transparent;
+	height: 32px;
+	margin: 0 auto;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 5px;
+	font-size: 16px;
+	resize:none;
+	text-align-all: center;
+}
+
+textarea:focus {
+	outline: none;
+}
