@@ -6,14 +6,21 @@ import { IMessage, IUser } from '../../../core/types';
 export interface IChat {
 	messages: IMessage[];
 	mainUser: IUser;
+	newReplicaText: string;
+	updateNewReplicaText: (newReplicaText: string) => void;
+	sendNewMessage: () => void;
 }
 
 const Chat: React.FC<IChat> = (props) => {
 
 	const newMessageElement = React.useRef<HTMLTextAreaElement>(null);
 
-	let sendNewMessage = () => {
-		alert(newMessageElement.current?.value)
+	let onSendNewMessage = () => {
+		props.sendNewMessage();
+	}
+
+	let onUpdateNewReplicaText = () => {
+		props.updateNewReplicaText(newMessageElement.current?.value ?? '')
 	}
 
 	return (
@@ -25,8 +32,8 @@ const Chat: React.FC<IChat> = (props) => {
 					))}
 			</div>
 			<div className={styles['chat__new-replica']}>
-				<textarea ref={newMessageElement}/>
-				<button onClick={sendNewMessage}>Send Message</button>
+				<textarea ref={newMessageElement} onChange={onUpdateNewReplicaText}/>
+				<button onClick={onSendNewMessage}>Send Message</button>
 			</div>
 		</div>
 	);

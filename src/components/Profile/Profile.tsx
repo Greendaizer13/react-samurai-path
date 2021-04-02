@@ -7,7 +7,9 @@ import NewPost from '../NewPost/NewPost';
 export interface IProfile {
 	user: IUser,
 	posts: IPost[],
-	addNewPost: (newPostText: string) => void,
+	newPostText: string;
+	addNewPost: () => void;
+	updateNewPostText: (newPostText: string) => void;
 }
 
 const Profile: React.FC<IProfile> = (props) => {
@@ -16,7 +18,10 @@ const Profile: React.FC<IProfile> = (props) => {
 			<div className={'block'}>
 				<ProfileInfo {...props.user}/>
 			</div>
-			<NewPost addNewPost={props.addNewPost}/>
+			<NewPost
+				addNewPost={props.addNewPost}
+				newPostText={props.newPostText}
+				updateNewPostText={props.updateNewPostText}/>
 
 			{props.posts.map((post) => (
 				<Post {...post}/>

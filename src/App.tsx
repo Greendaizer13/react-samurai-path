@@ -5,10 +5,14 @@ import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { IApplicationState } from './redux/state';
+import { IStore } from './redux/state';
 import { MESSAGES_ROUTE, PROFILE_ROUTE } from './core/constants';
 
-const App: React.FC<IApplicationState> = (props) => {
+export interface IApp {
+	store: IStore;
+}
+
+const App: React.FC<IApp> = (props) => {
 	return (
 		<BrowserRouter>
 			<div className={'app-wrapper'}>
@@ -18,25 +22,32 @@ const App: React.FC<IApplicationState> = (props) => {
 					<div className={'content'}>
 						<Route render={() =>
 							<Profile
-								user={props.profile.user}
-								posts={props.profile.posts}
-								addNewPost={props.profile.addNewPost}
+								user={props.store.getState().mainUser}
+								posts={props.store.getState().profile.posts}
+								newPostText={props.store.getState().profile.newPostText}
+								updateNewPostText={props.store.updateNewPostText.bind(props.store)}
+								addNewPost={props.store.addNewPost.bind(props.store)}
 							/>}
 						       path={PROFILE_ROUTE}
 						/>
 						<Route render={() =>
 							<Messages
-								mainUser={props.messages.mainUser}
-								dialogUsers={props.messages.dialogUsers}
-								messages={props.messages.messages}
+								dialogUsers={props.store.getState().messages.dialogUsers}
+								mainUser={props.store.getState().mainUser}
+								messages={props.store.getState().messages.messages}
+								newReplicaText={props.store.getState().messages.newReplicaText}
+								updateNewReplicaText={props.store.updateNewReplicaText.bind(props.store)}
+								sendNewMessage={props.store.sendNewMessage.bind(props.store)}
 							/>}
 						       path={MESSAGES_ROUTE}
 						/>
 						<Route render={() =>
 							<Profile
-								user={props.profile.user}
-								posts={props.profile.posts}
-								addNewPost={props.profile.addNewPost}
+								user={props.store.getState().mainUser}
+								posts={props.store.getState().profile.posts}
+								newPostText={props.store.getState().profile.newPostText}
+								updateNewPostText={props.store.updateNewPostText.bind(props.store)}
+								addNewPost={props.store.addNewPost.bind(props.store)}
 							/>}
 						       exact path={'/'}/>
 					</div>
