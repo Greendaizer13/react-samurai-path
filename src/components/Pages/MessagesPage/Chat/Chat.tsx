@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './Chat.module.css';
 import Replica from './Replica/Replica';
 import { IMessage, IUser } from '../../../../core/types';
+import { IAction } from '../../../../redux/types';
 
 export interface IChat {
 	messages: IMessage[];
 	mainUser: IUser;
 	newReplicaText: string;
-	updateNewReplicaText: (newReplicaText: string) => void;
-	sendNewMessage: () => void;
+	dispatch: (action: IAction) => void;
 }
 
 const Chat: React.FC<IChat> = (props) => {
@@ -16,11 +16,12 @@ const Chat: React.FC<IChat> = (props) => {
 	const newMessageElement = React.useRef<HTMLTextAreaElement>(null);
 
 	let onSendNewMessage = () => {
-		props.sendNewMessage();
+		props.dispatch({type: 'SEND-NEW-MESSAGE', param: ''});
 	}
 
 	let onUpdateNewReplicaText = () => {
-		props.updateNewReplicaText(newMessageElement.current?.value ?? '')
+		props.dispatch({type: 'UPDATE-NEW-REPLICA-TEXT',
+			param: newMessageElement.current?.value ?? ''});
 	}
 
 	return (

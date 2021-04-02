@@ -25,8 +25,7 @@ const App: React.FC<IApp> = (props) => {
 								user={props.store.getState().mainUser}
 								posts={props.store.getState().profile.posts}
 								newPostText={props.store.getState().profile.newPostText}
-								updateNewPostText={props.store.updateNewPostText.bind(props.store)}
-								addNewPost={props.store.addNewPost.bind(props.store)}
+								dispatch={props.store.dispatch.bind(props.store)}
 							/>}
 						       path={PROFILE_ROUTE}
 						/>
@@ -36,8 +35,7 @@ const App: React.FC<IApp> = (props) => {
 								mainUser={props.store.getState().mainUser}
 								messages={props.store.getState().messages.messages}
 								newReplicaText={props.store.getState().messages.newReplicaText}
-								updateNewReplicaText={props.store.updateNewReplicaText.bind(props.store)}
-								sendNewMessage={props.store.sendNewMessage.bind(props.store)}
+								dispatch={props.store.dispatch.bind(props.store)}
 							/>}
 						       path={MESSAGES_ROUTE}
 						/>
@@ -46,8 +44,7 @@ const App: React.FC<IApp> = (props) => {
 								user={props.store.getState().mainUser}
 								posts={props.store.getState().profile.posts}
 								newPostText={props.store.getState().profile.newPostText}
-								updateNewPostText={props.store.updateNewPostText.bind(props.store)}
-								addNewPost={props.store.addNewPost.bind(props.store)}
+								dispatch={props.store.dispatch.bind(props.store)}
 							/>}
 						       exact path={'/'}/>
 					</div>

@@ -3,13 +3,13 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Post, { IPost } from './Post/Post';
 import { IUser } from '../../../core/types';
 import NewPost from './NewPost/NewPost';
+import { IAction } from '../../../redux/types';
 
 export interface IProfilePage {
 	user: IUser,
 	posts: IPost[],
 	newPostText: string;
-	addNewPost: () => void;
-	updateNewPostText: (newPostText: string) => void;
+	dispatch: (action: IAction) => void;
 }
 
 const ProfilePage: React.FC<IProfilePage> = (props) => {
@@ -19,9 +19,9 @@ const ProfilePage: React.FC<IProfilePage> = (props) => {
 				<ProfileInfo {...props.user}/>
 			</div>
 			<NewPost
-				addNewPost={props.addNewPost}
+
 				newPostText={props.newPostText}
-				updateNewPostText={props.updateNewPostText}/>
+				dispatch={props.dispatch}/>
 
 			{props.posts.map((post) => (
 				<Post {...post}/>

@@ -17,3 +17,8 @@ export interface IMessagesData {
 	messages: IMessage[];
 	newReplicaText: string;
 }
+
+export interface IAction {
+	type: string;
+	param: any;
+}

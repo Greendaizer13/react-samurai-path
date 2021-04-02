@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './NewPost.module.css';
+import { IAction } from '../../../../redux/types';
 
 export interface INewPost {
-	addNewPost: () => void;
-	updateNewPostText: (newPostText: string) => void;
+	dispatch: (action: IAction) => void;
 	newPostText: string;
 }
 
@@ -13,11 +13,12 @@ const NewPost: React.FC<INewPost> = (props) => {
 	const newPostElement = React.useRef<HTMLTextAreaElement>(null);
 
 	let onAddNewPost = () => {
-		props.addNewPost();
+		props.dispatch({type: 'ADD-NEW-POST', param: ''});
 	};
 
 	let onNewPostTextChange = () => {
-		props.updateNewPostText(newPostElement.current?.value ?? 'Text is empty. Do something');
+		props.dispatch({type: 'UPDATE-NEW-POST-TEXT',
+			param: newPostElement.current?.value ?? 'Text is empty. Do something'});
 	}
 
 	return (

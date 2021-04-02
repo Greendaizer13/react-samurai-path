@@ -6,14 +6,14 @@ import { MESSAGES_ROUTE } from '../../../core/constants';
 import { IMessage, IUser } from '../../../core/types';
 import Chat from './Chat/Chat';
 import classNames from 'classnames';
+import { IAction } from '../../../redux/types';
 
 export interface IMessagesPage {
 	dialogUsers: IUser[];
 	messages: IMessage[];
 	mainUser: IUser;
 	newReplicaText: string;
-	updateNewReplicaText: (newReplicaText: string) => void;
-	sendNewMessage: () => void;
+	dispatch: (action: IAction) => void;
 }
 
 const MessagesPage: React.FC<IMessagesPage> = (props) => {
@@ -24,8 +24,7 @@ const MessagesPage: React.FC<IMessagesPage> = (props) => {
 				mainUser={props.mainUser}
 				messages={props.messages}
 				newReplicaText={props.newReplicaText}
-				updateNewReplicaText={props.updateNewReplicaText}
-				sendNewMessage={props.sendNewMessage}
+				dispatch={props.dispatch}
 			/>}
 			       path={MESSAGES_ROUTE}
 			/>
