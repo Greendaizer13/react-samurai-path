@@ -2,8 +2,8 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
-import Profile from './components/Profile/Profile';
-import Messages from './components/Messages/Messages';
+import ProfilePage from './components/Pages/ProfilePage/ProfilePage';
+import MessagesPage from './components/Pages/MessagesPage/MessagesPage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { IStore } from './redux/state';
 import { MESSAGES_ROUTE, PROFILE_ROUTE } from './core/constants';
@@ -21,7 +21,7 @@ const App: React.FC<IApp> = (props) => {
 					<NavBar/>
 					<div className={'content'}>
 						<Route render={() =>
-							<Profile
+							<ProfilePage
 								user={props.store.getState().mainUser}
 								posts={props.store.getState().profile.posts}
 								newPostText={props.store.getState().profile.newPostText}
@@ -31,7 +31,7 @@ const App: React.FC<IApp> = (props) => {
 						       path={PROFILE_ROUTE}
 						/>
 						<Route render={() =>
-							<Messages
+							<MessagesPage
 								dialogUsers={props.store.getState().messages.dialogUsers}
 								mainUser={props.store.getState().mainUser}
 								messages={props.store.getState().messages.messages}
@@ -42,7 +42,7 @@ const App: React.FC<IApp> = (props) => {
 						       path={MESSAGES_ROUTE}
 						/>
 						<Route render={() =>
-							<Profile
+							<ProfilePage
 								user={props.store.getState().mainUser}
 								posts={props.store.getState().profile.posts}
 								newPostText={props.store.getState().profile.newPostText}

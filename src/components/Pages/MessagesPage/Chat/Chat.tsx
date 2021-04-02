@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Chat.module.css';
 import Replica from './Replica/Replica';
-import { IMessage, IUser } from '../../../core/types';
+import { IMessage, IUser } from '../../../../core/types';
 
 export interface IChat {
 	messages: IMessage[];

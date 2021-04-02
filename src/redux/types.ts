@@ -1,5 +1,5 @@
 import { IMessage, IUser } from '../core/types';
-import { IPost } from '../components/Post/Post';
+import { IPost } from '../components/Pages/ProfilePage/Post/Post';
 
 export interface IApplicationState {
 	mainUser: IUser;

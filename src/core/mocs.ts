@@ -1,5 +1,5 @@
 import { IMessage, IUser } from './types';
-import { IPost } from '../components/Post/Post';
+import { IPost } from '../components/Pages/ProfilePage/Post/Post';
 
 export const USERS_DATA: IUser[] = [
 	{

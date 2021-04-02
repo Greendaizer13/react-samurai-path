@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css';
 import ProfileInfoItem from './ProfileInfoItem/ProfileInfoItem';
-import { IUser } from '../../../core/types';
+import { IUser } from '../../../../core/types';
 
 const ProfileInfo : React.FC<IUser> = (props) => {
 	return (

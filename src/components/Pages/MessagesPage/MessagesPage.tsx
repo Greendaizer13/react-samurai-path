@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Messages.module.css';
 import Dialogs from './Dialogs/Dialogs';
-import classNames from 'classnames';
 import { Route } from 'react-router-dom';
-import { MESSAGES_ROUTE } from '../../core/constants';
-import { IMessage, IUser } from '../../core/types';
+import { MESSAGES_ROUTE } from '../../../core/constants';
+import { IMessage, IUser } from '../../../core/types';
 import Chat from './Chat/Chat';
+import classNames from 'classnames';
 
-export interface IMessages {
+export interface IMessagesPage {
 	dialogUsers: IUser[];
 	messages: IMessage[];
 	mainUser: IUser;
@@ -16,7 +16,7 @@ export interface IMessages {
 	sendNewMessage: () => void;
 }
 
-const Messages: React.FC<IMessages> = (props) => {
+const MessagesPage: React.FC<IMessagesPage> = (props) => {
 	return (
 		<div className={classNames('block', styles['messages'])}>
 			<Dialogs users={props.dialogUsers}/>
@@ -33,4 +33,4 @@ const Messages: React.FC<IMessages> = (props) => {
 	);
 };
 
-export default Messages;
+export default MessagesPage;

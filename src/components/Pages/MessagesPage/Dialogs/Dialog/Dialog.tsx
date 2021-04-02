@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Dialog.module.css';
-import { IUser } from '../../../../core/types';
+import { IUser } from '../../../../../core/types';
 import classNames from 'classnames';
-import { EMPTY_AVATAR_URL } from '../../../../core/constants';
+import { EMPTY_AVATAR_URL } from '../../../../../core/constants';
 
 const Dialog: React.FC<IUser> = (props) => {
 	return (
