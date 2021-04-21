@@ -3,6 +3,7 @@ import styles from './Chat.module.css';
 import Replica from './Replica/Replica';
 import { IMessage, IUser } from '../../../../core/types';
 import { IAction } from '../../../../redux/types';
+import { SEND_MESSAGE, UPDATE_NEW_REPLICA_TEXT } from '../../../../redux/reducers/messagesReducer';
 
 export interface IChat {
 	messages: IMessage[];
@@ -13,15 +14,13 @@ export interface IChat {
 
 const Chat: React.FC<IChat> = (props) => {
 
-	const newMessageElement = React.useRef<HTMLTextAreaElement>(null);
-
 	let onSendNewMessage = () => {
-		props.dispatch({type: 'SEND-NEW-MESSAGE', param: ''});
+		props.dispatch({type: SEND_MESSAGE, param: ''});
 	}
 
-	let onUpdateNewReplicaText = () => {
-		props.dispatch({type: 'UPDATE-NEW-REPLICA-TEXT',
-			param: newMessageElement.current?.value ?? ''});
+	let onUpdateNewReplicaText = (event: React.FormEvent<HTMLTextAreaElement>) => {
+		props.dispatch({type: UPDATE_NEW_REPLICA_TEXT,
+			param: event.currentTarget.value ?? ''});
 	}
 
 	return (
@@ -33,7 +32,7 @@ const Chat: React.FC<IChat> = (props) => {
 					))}
 			</div>
 			<div className={styles['chat__new-replica']}>
-				<textarea ref={newMessageElement} onChange={onUpdateNewReplicaText}/>
+				<textarea onChange={onUpdateNewReplicaText}/>
 				<button onClick={onSendNewMessage}>Send Message</button>
 			</div>
 		</div>

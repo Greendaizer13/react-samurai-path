@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './NewPost.module.css';
 import { IAction } from '../../../../redux/types';
+import { ADD_NEW_POST, UPDATE_NEW_POST_TEXT } from '../../../../redux/reducers/profileReducer';
 
 export interface INewPost {
 	dispatch: (action: IAction) => void;
@@ -10,15 +11,13 @@ export interface INewPost {
 
 const NewPost: React.FC<INewPost> = (props) => {
 
-	const newPostElement = React.useRef<HTMLTextAreaElement>(null);
-
 	let onAddNewPost = () => {
-		props.dispatch({type: 'ADD-NEW-POST', param: ''});
+		props.dispatch({type: ADD_NEW_POST, param: ''});
 	};
 
-	let onNewPostTextChange = () => {
-		props.dispatch({type: 'UPDATE-NEW-POST-TEXT',
-			param: newPostElement.current?.value ?? 'Text is empty. Do something'});
+	let onNewPostTextChange = (event: React.FormEvent<HTMLTextAreaElement>) => {
+		props.dispatch({type: UPDATE_NEW_POST_TEXT,
+			param: event.currentTarget.value ?? 'Text is empty. Do something'});
 	}
 
 	return (
@@ -26,7 +25,7 @@ const NewPost: React.FC<INewPost> = (props) => {
 			<div className={classNames(styles['new-post'])}>
 				<div className={styles['new-post--input']} >
 					<textarea placeholder={'What\'s new?'}
-					          ref={newPostElement} onChange={onNewPostTextChange}/>
+					          onChange={onNewPostTextChange}/>
 				</div>
 				<div className={styles['new-post--button']}>
 					<button onClick={onAddNewPost}>Add post</button>
