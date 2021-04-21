@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styles from './NewPost.module.css';
 import { IAction } from '../../../../redux/types';
 import { ADD_NEW_POST, UPDATE_NEW_POST_TEXT } from '../../../../redux/reducers/profileReducer';
+import CommonButton from '../../../controls/commonButton/CommonButton';
 
 export interface INewPost {
 	dispatch: (action: IAction) => void;
@@ -28,7 +29,7 @@ const NewPost: React.FC<INewPost> = (props) => {
 					          onChange={onNewPostTextChange}/>
 				</div>
 				<div className={styles['new-post--button']}>
-					<button onClick={onAddNewPost}>Add post</button>
+					<CommonButton onClick={onAddNewPost} text={'Add post'}/>
 				</div>
 			</div>
 		</div>

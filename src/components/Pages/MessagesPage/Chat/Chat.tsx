@@ -4,6 +4,8 @@ import Replica from './Replica/Replica';
 import { IMessage, IUser } from '../../../../core/types';
 import { IAction } from '../../../../redux/types';
 import { SEND_MESSAGE, UPDATE_NEW_REPLICA_TEXT } from '../../../../redux/reducers/messagesReducer';
+import CommonButton from '../../../controls/commonButton/CommonButton';
+import classNames from 'classnames';
 
 export interface IChat {
 	messages: IMessage[];
@@ -31,9 +33,9 @@ const Chat: React.FC<IChat> = (props) => {
 						<Replica mainUser={props.mainUser} message={message}/>
 					))}
 			</div>
-			<div className={styles['chat__new-replica']}>
-				<textarea onChange={onUpdateNewReplicaText}/>
-				<button onClick={onSendNewMessage}>Send Message</button>
+			<div className={classNames(styles['chat__new-replica'])}>
+				<textarea className={styles['new-replica--input']} onChange={onUpdateNewReplicaText}/>
+				<CommonButton className={styles['new-replica--button']} text={'Send message'} onClick={onSendNewMessage}/>
 			</div>
 		</div>
 	);

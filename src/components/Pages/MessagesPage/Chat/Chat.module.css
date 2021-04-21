@@ -13,5 +13,14 @@
 }
 
 .chat__new-replica {
+	padding: var(--padding-base-ver) var(--padding-base-hor);
+}
 
+.new-replica--input {
+	flex-grow: 1;
+}
+
+.new-replica--button {
+	display: flex;
+	justify-content: flex-end;
 }
