@@ -1,26 +1,33 @@
-import { IAction, IApplicationState } from '../types';
+import { IAction, IProfileData } from '../types';
+import { POSTS_DATA } from '../../core/mocs';
+import { Reducer } from 'redux';
 
 export const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 export const ADD_NEW_POST = 'ADD-NEW-POST';
 
-function ProfileReducer(state: IApplicationState, action: IAction): IApplicationState {
+const initialProfile: IProfileData = {
+	posts: POSTS_DATA,
+	newPostText: '',
+};
 
-	let newState = { ...state };
+const profileReducer: Reducer<IProfileData, IAction> = (state, action) => {
+	state = state ?? initialProfile;
 
 	switch (action.type) {
 		case (UPDATE_NEW_POST_TEXT):
-			newState.profile.newPostText = action.param;
-			return newState;
+			state.newPostText = action.param;
+			return state;
 		case (ADD_NEW_POST):
-			let id = newState.profile.posts.length;
-			newState.profile.posts.push({
+			let id = state.posts.length;
+			state.posts.push({
 				id: id,
-				text: newState.profile.newPostText,
+				text: state.newPostText,
 			});
-			newState.profile.newPostText = '';
-			return newState;
-		default: return newState;
+			state.newPostText = '';
+			return state;
+		default:
+			return state;
 	}
-}
+};
 
-export default ProfileReducer;
+export default profileReducer;

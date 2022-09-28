@@ -1,29 +1,21 @@
 import React from 'react';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import Post, { IPost } from './Post/Post';
-import { IUser } from '../../../core/types';
+import Post from './Post/Post';
 import NewPost from './NewPost/NewPost';
-import { IAction } from '../../../redux/types';
+import store from '../../../redux/store';
+import { MAIN_USER_DATA } from '../../../core/mocs';
 
-export interface IProfilePage {
-	user: IUser,
-	posts: IPost[],
-	newPostText: string;
-	dispatch: (action: IAction) => void;
-}
-
-const ProfilePage: React.FC<IProfilePage> = (props) => {
+const ProfilePage: React.FC = () => {
+	const state = store.getState();
 	return (
 		<div>
 			<div className={'block'}>
-				<ProfileInfo {...props.user}/>
+				<ProfileInfo user={MAIN_USER_DATA}/>
 			</div>
 			<NewPost
+				newPostText={state.profile.newPostText}/>
 
-				newPostText={props.newPostText}
-				dispatch={props.dispatch}/>
-
-			{props.posts.map((post) => (
+			{state.profile.posts.map((post) => (
 				<Post {...post}/>
 			))}
 		</div>

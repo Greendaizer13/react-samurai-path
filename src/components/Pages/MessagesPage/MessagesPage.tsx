@@ -3,29 +3,24 @@ import styles from './Messages.module.css';
 import Dialogs from './Dialogs/Dialogs';
 import { Route } from 'react-router-dom';
 import { MESSAGES_ROUTE } from '../../../core/constants';
-import { IMessage, IUser } from '../../../core/types';
 import Chat from './Chat/Chat';
 import classNames from 'classnames';
-import { IAction } from '../../../redux/types';
+import store from '../../../redux/store';
+import { MAIN_USER_DATA } from '../../../core/mocs';
 
-export interface IMessagesPage {
-	dialogUsers: IUser[];
-	messages: IMessage[];
-	mainUser: IUser;
-	newReplicaText: string;
-	dispatch: (action: IAction) => void;
-}
+const MessagesPage: React.FC = () => {
+	const state = store.getState();
 
-const MessagesPage: React.FC<IMessagesPage> = (props) => {
 	return (
 		<div className={classNames('block', styles['messages'])}>
-			<Dialogs users={props.dialogUsers}/>
-			<Route render={() => <Chat
-				mainUser={props.mainUser}
-				messages={props.messages}
-				newReplicaText={props.newReplicaText}
-				dispatch={props.dispatch}
-			/>}
+			<Dialogs users={state.messages.dialogUsers}/>
+			<Route render={() => (
+				<Chat
+					mainUser={MAIN_USER_DATA} // todo
+					messages={state.messages.messages}
+					newReplicaText={state.messages.newReplicaText}
+				/>
+			)}
 			       path={MESSAGES_ROUTE}
 			/>
 		</div>

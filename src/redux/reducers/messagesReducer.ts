@@ -1,25 +1,33 @@
-import { IAction, IApplicationState } from '../types';
+import { IAction, IMessagesData } from '../types';
+import { DIALOGS_DATA, MAIN_USER_DATA, USERS_DATA } from '../../core/mocs';
+import { Reducer } from 'redux';
 
 export const UPDATE_NEW_REPLICA_TEXT = 'UPDATE-NEW-REPLICA-TEXT';
 export const SEND_MESSAGE = 'SEND-MESSAGE';
 
-function MessagesReducer(state: IApplicationState, action: IAction): IApplicationState {
+const initialMessages: IMessagesData = {
+	dialogUsers: USERS_DATA,
+	messages: DIALOGS_DATA[0],
+	newReplicaText: '',
+};
 
-	let newState = { ...state };
+const messagesReducer: Reducer<IMessagesData, IAction> = (state, action) => {
+	state = state ?? initialMessages;
 
 	switch (action.type) {
 		case (UPDATE_NEW_REPLICA_TEXT):
-			newState.messages.newReplicaText = action.param;
-			return newState;
+			state.newReplicaText = action.param;
+			return state;
 		case (SEND_MESSAGE):
-			newState.messages.messages.push({
-				user: newState.mainUser,
-				text: newState.messages.newReplicaText,
+			state.messages.push({
+				user: MAIN_USER_DATA, // todo
+				text: state.newReplicaText,
 			});
-			newState.messages.newReplicaText = '';
-			return newState;
-		default: return newState;
+			state.newReplicaText = '';
+			return state;
+		default:
+			return state;
 	}
-}
+};
 
-export default MessagesReducer;
+export default messagesReducer;

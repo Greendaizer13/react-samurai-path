@@ -6,22 +6,23 @@ import { IAction } from '../../../../redux/types';
 import { SEND_MESSAGE, UPDATE_NEW_REPLICA_TEXT } from '../../../../redux/reducers/messagesReducer';
 import CommonButton from '../../../controls/commonButton/CommonButton';
 import classNames from 'classnames';
+import store from '../../../../redux/store';
 
 export interface IChat {
 	messages: IMessage[];
 	mainUser: IUser;
 	newReplicaText: string;
-	dispatch: (action: IAction) => void;
 }
 
 const Chat: React.FC<IChat> = (props) => {
+	const dispatch = store.dispatch.bind(store);
 
 	let onSendNewMessage = () => {
-		props.dispatch({type: SEND_MESSAGE, param: ''});
+		dispatch({type: SEND_MESSAGE, param: ''});
 	}
 
 	let onUpdateNewReplicaText = (event: React.FormEvent<HTMLTextAreaElement>) => {
-		props.dispatch({type: UPDATE_NEW_REPLICA_TEXT,
+		dispatch({type: UPDATE_NEW_REPLICA_TEXT,
 			param: event.currentTarget.value ?? ''});
 	}
 
