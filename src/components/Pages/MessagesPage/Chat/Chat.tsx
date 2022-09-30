@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './Chat.module.css';
 import Replica from './Replica/Replica';
-import { IMessage, IUser } from '../../../../core/types';
+import { IMessage, User } from '../../../../core/types';
 import CommonButton from '../../../controls/commonButton/CommonButton';
 import classNames from 'classnames';
 import { useAppDispatch } from '../../../../redux/hooks';
@@ -9,7 +9,7 @@ import { sendMessage, updateNewReplicaText } from '../../../../redux/reducers/di
 
 export interface IChat {
 	messages: IMessage[];
-	mainUser: IUser;
+	mainUser: User;
 	newReplicaText: string;
 }
 

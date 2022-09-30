@@ -5,7 +5,8 @@ import NavBar from './components/NavBar/NavBar';
 import ProfilePage from './components/Pages/ProfilePage/ProfilePage';
 import MessagesPage from './components/Pages/MessagesPage/MessagesPage';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { MESSAGES_ROUTE, PROFILE_ROUTE } from './core/constants';
+import { ALL_USERS_ROUTE, MESSAGES_ROUTE, PROFILE_ROUTE } from './core/constants';
+import { AllUsersPage } from './components/Pages/UsersPage/AllUsers/AllUsersPage';
 
 const App: React.FC = () => {
 	return (
@@ -27,6 +28,10 @@ const App: React.FC = () => {
 							render={() => <ProfilePage/>}
 							exact path={'/'}
 						/>
+						<Route
+							render={() => <AllUsersPage/>}
+							path={ALL_USERS_ROUTE}
+							/>
 					</div>
 				</div>
 			</div>

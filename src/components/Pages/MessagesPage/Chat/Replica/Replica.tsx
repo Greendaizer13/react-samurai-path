@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Replica.module.css';
-import { IMessage, IUser } from '../../../../../core/types';
+import { IMessage, User } from '../../../../../core/types';
 import classNames from 'classnames';
 import { EMPTY_AVATAR_URL } from '../../../../../core/constants';
 
 export interface IReplica {
 	message: IMessage;
-	mainUser: IUser;
+	mainUser: User;
 }
 
 const Replica: React.FC<IReplica> = (props) => {

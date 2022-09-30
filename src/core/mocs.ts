@@ -1,17 +1,23 @@
-import { IMessage, IUser } from './types';
+import { IMessage, User } from './types';
 import { IPost } from '../components/Pages/ProfilePage/Post/Post';
 
-export const USERS_DATA: IUser[] = [
+export const USERS_DATA: User[] = [
 	{
 		id: 0,
 		firstName: 'Tilda',
 		lastName: 'Swinton',
 		imgUrl: 'https://avatars.mds.yandex.net/i?id=06f9fd95d436f5e6f313c68d4ff7cbe9-5333993-images-thumbs&n=13&exp=1',
+		status: 'I am the Goddess',
+		followed: true,
 	},
 	{
 		id: 1,
 		firstName: 'Adam',
 		lastName: 'Lambert',
+		location: {
+			country: 'USA',
+			city: 'Los Angeles'
+		}
 	},
 	{
 		id: 2,
@@ -29,7 +35,13 @@ export const USERS_DATA: IUser[] = [
 	{
 		id: 5,
 		firstName: 'Savelev',
-		lastName: 'Dmitri',
+		lastName: 'Dmitry',
+		status: "I'm the best at react and front-end coding",
+		location: {
+			country: 'Russia',
+			city: 'Krasnodar'
+		},
+		followed: true,
 	},
 	{
 		id: 6,
@@ -38,7 +50,7 @@ export const USERS_DATA: IUser[] = [
 	},
 ];
 
-export const MAIN_USER_DATA: IUser = {
+export const MAIN_USER_DATA: User = {
 	id: 999,
 	firstName: "Frog's Lag",
 	imgUrl: 'https://sun2-9.userapi.com/s/v1/ig2/w2L4qY0YKT3i9J06JK1SHIUtN4rJHH6C326vMOipnI2ddyZV3x89j-gkrsd7ZJeYpaGGg98H72hJmoXKACUXMzEH.jpg?size=200x200&quality=96&crop=0,160,959,959&ava=1',

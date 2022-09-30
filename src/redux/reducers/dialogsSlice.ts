@@ -32,12 +32,12 @@
 //
 // export default messagesReducer;
 
-import { IMessage, IUser } from '../../core/types';
+import { IMessage, User } from '../../core/types';
 import { DIALOGS_DATA, MAIN_USER_DATA, USERS_DATA } from '../../core/mocs';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface DialogsState {
-	dialogUsers: IUser[];
+	dialogUsers: User[];
 	messages: IMessage[];
 	newReplicaText: string;
 }

@@ -2,3 +2,4 @@ export const EMPTY_AVATAR_URL : string = 'https://yandex-images.clstorage.net/k9
 
 export const PROFILE_ROUTE : string = '/profile/';
 export const MESSAGES_ROUTE : string = '/messages/';
+export const ALL_USERS_ROUTE: string = '/all-users/';

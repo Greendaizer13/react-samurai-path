@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Dialogs.module.css';
-import { IUser } from '../../../../core/types';
+import { User } from '../../../../core/types';
 import Dialog from './Dialog/Dialog';
 import { NavLink } from 'react-router-dom';
 import { MESSAGES_ROUTE } from '../../../../core/constants';
 
 export interface IDialogs {
-	users: IUser[];
+	users: User[];
 }
 
 const Dialogs: React.FC<IDialogs> = (props) => {

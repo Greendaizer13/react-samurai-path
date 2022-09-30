@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css';
 import ProfileInfoItem from './ProfileInfoItem/ProfileInfoItem';
-import { IUser } from '../../../../core/types';
+import { User } from '../../../../core/types';
 
 interface ProfileInfoProps {
-	user: IUser;
+	user: User;
 }
 
 const ProfileInfo: React.FC<ProfileInfoProps> = (props) => {

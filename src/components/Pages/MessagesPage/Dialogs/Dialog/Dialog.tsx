@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Dialog.module.css';
-import { IUser } from '../../../../../core/types';
+import { User } from '../../../../../core/types';
 import classNames from 'classnames';
 import { EMPTY_AVATAR_URL } from '../../../../../core/constants';
 
-const Dialog: React.FC<IUser> = (props) => {
+const Dialog: React.FC<User> = (props) => {
 	return (
 		<div className={styles['dialog']}>
 			<div className={classNames(styles['avatar'], styles['dialog__item'])}>
