@@ -1,12 +1,14 @@
-import { combineReducers, legacy_createStore as createStore } from 'redux';
-import messagesReducer from './reducers/messagesReducer';
-import profileReducer from './reducers/profileReducer';
+import { dialogsSlice } from './reducers/dialogsSlice';
+import { profileSlice } from './reducers/profileSlice';
+import { configureStore } from '@reduxjs/toolkit';
 
-let reducers = combineReducers({
-	profile: profileReducer,
-	messages: messagesReducer,
+export const store = configureStore({
+	reducer: {
+		dialogs: dialogsSlice.reducer,
+		profile: profileSlice.reducer,
+	},
 });
 
-let store = createStore(reducers);
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
 
-export default store;

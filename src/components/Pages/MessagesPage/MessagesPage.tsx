@@ -5,20 +5,24 @@ import { Route } from 'react-router-dom';
 import { MESSAGES_ROUTE } from '../../../core/constants';
 import Chat from './Chat/Chat';
 import classNames from 'classnames';
-import store from '../../../redux/store';
 import { MAIN_USER_DATA } from '../../../core/mocs';
+import { useAppSelector } from '../../../redux/hooks';
 
 const MessagesPage: React.FC = () => {
-	const state = store.getState();
+	const {
+		messages,
+		dialogUsers,
+		newReplicaText,
+	} = useAppSelector((state) => state.dialogs);
 
 	return (
 		<div className={classNames('block', styles['messages'])}>
-			<Dialogs users={state.messages.dialogUsers}/>
+			<Dialogs users={dialogUsers}/>
 			<Route render={() => (
 				<Chat
 					mainUser={MAIN_USER_DATA} // todo
-					messages={state.messages.messages}
-					newReplicaText={state.messages.newReplicaText}
+					messages={messages}
+					newReplicaText={newReplicaText}
 				/>
 			)}
 			       path={MESSAGES_ROUTE}

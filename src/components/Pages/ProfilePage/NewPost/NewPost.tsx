@@ -1,36 +1,43 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import classNames from 'classnames';
 import styles from './NewPost.module.css';
-import { ADD_NEW_POST, UPDATE_NEW_POST_TEXT } from '../../../../redux/reducers/profileReducer';
+import {
+	ADD_NEW_POST,
+	addNewPost,
+	UPDATE_NEW_POST_TEXT,
+	updateNewPostText,
+} from '../../../../redux/reducers/profileSlice';
 import CommonButton from '../../../controls/commonButton/CommonButton';
-import store from '../../../../redux/store';
+import { useAppDispatch } from '../../../../redux/hooks';
 
 export interface INewPost {
 	newPostText: string;
 }
 
-const NewPost: React.FC<INewPost> = (props) => {
-	const dispatch = store.dispatch.bind(store);
-	let onAddNewPost = () => {
-		dispatch({
-			type: ADD_NEW_POST,
-			param: '',
-		});
+const NewPost: React.FC<INewPost> = () => {
+	const ref = useRef<HTMLTextAreaElement>(null);
+	const dispatch = useAppDispatch();
+
+	const onAddNewPost = () => {
+		dispatch(addNewPost(''));
+		if (ref.current) {
+			ref.current.value = '';
+		}
 	};
 
 	let onNewPostTextChange = (event: React.FormEvent<HTMLTextAreaElement>) => {
-		dispatch({
-			type: UPDATE_NEW_POST_TEXT,
-			param: event.currentTarget.value ?? 'Text is empty. Do something',
-		});
+		dispatch(updateNewPostText(event.currentTarget.value ?? 'Text is empty. Do something'));
 	};
 
 	return (
 		<div className={'block'}>
 			<div className={classNames(styles['new-post'])}>
 				<div className={styles['new-post--input']}>
-					<textarea placeholder={'What\'s new?'}
-					          onChange={onNewPostTextChange}/>
+					<textarea
+						ref = {ref}
+						placeholder={'What\'s new?'}
+					          onChange={onNewPostTextChange}
+					/>
 				</div>
 				<div className={styles['new-post--button']}>
 					<CommonButton onClick={onAddNewPost} text={'Add post'}/>

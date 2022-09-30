@@ -6,7 +6,7 @@ export const USERS_DATA: IUser[] = [
 		id: 0,
 		firstName: 'Tilda',
 		lastName: 'Swinton',
-		imgUrl: 'https://avatars.mds.yandex.net/get-zen_doc/59126/pub_59f8ce611410c3bdd9467eb9_59f8d0adfd96b1d9b725f994/scale_1200',
+		imgUrl: 'https://avatars.mds.yandex.net/i?id=06f9fd95d436f5e6f313c68d4ff7cbe9-5333993-images-thumbs&n=13&exp=1',
 	},
 	{
 		id: 1,
@@ -41,7 +41,7 @@ export const USERS_DATA: IUser[] = [
 export const MAIN_USER_DATA: IUser = {
 	id: 999,
 	firstName: "Frog's Lag",
-	imgUrl: 'https://yt3.ggpht.com/a/AATXAJwcjuvfzamlEQqn3uFmAol0Q_zTloG96JtpB1de=s900-c-k-c0xffffffff-no-rj-mo',
+	imgUrl: 'https://sun2-9.userapi.com/s/v1/ig2/w2L4qY0YKT3i9J06JK1SHIUtN4rJHH6C326vMOipnI2ddyZV3x89j-gkrsd7ZJeYpaGGg98H72hJmoXKACUXMzEH.jpg?size=200x200&quality=96&crop=0,160,959,959&ava=1',
 }
 
 export const POSTS_DATA : IPost[] = [

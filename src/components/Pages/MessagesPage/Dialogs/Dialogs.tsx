@@ -13,8 +13,13 @@ const Dialogs: React.FC<IDialogs> = (props) => {
 	return (
 		<div className={styles['dialogs']}>
 			{
-				props.users.map((user) => (
-					<NavLink to={MESSAGES_ROUTE + user.id}><Dialog {...user}/></NavLink>
+				props.users.map((user, index) => (
+					<NavLink
+						key={index}
+						to={MESSAGES_ROUTE + user.id}
+					>
+						<Dialog {...user}/>
+					</NavLink>
 				))
 			}
 		</div>

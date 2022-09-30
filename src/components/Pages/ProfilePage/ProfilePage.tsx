@@ -2,21 +2,27 @@ import React from 'react';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Post from './Post/Post';
 import NewPost from './NewPost/NewPost';
-import store from '../../../redux/store';
 import { MAIN_USER_DATA } from '../../../core/mocs';
+import { useAppSelector } from '../../../redux/hooks';
 
 const ProfilePage: React.FC = () => {
-	const state = store.getState();
+	const {
+		newPostText,
+		posts,
+	} = useAppSelector(state => state.profile);
 	return (
 		<div>
 			<div className={'block'}>
 				<ProfileInfo user={MAIN_USER_DATA}/>
 			</div>
 			<NewPost
-				newPostText={state.profile.newPostText}/>
+				newPostText={newPostText}/>
 
-			{state.profile.posts.map((post) => (
-				<Post {...post}/>
+			{posts.map((post, index) => (
+				<Post
+					key={index}
+					{...post}
+				/>
 			))}
 		</div>
 	);
