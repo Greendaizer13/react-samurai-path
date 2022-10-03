@@ -5,7 +5,7 @@ const Header = () => {
 	return (
 		<header className={styles['app-header']}>
 			<div className={styles['app-header__content']}>
-				<div className={styles['app-header__title']}>The Way of the Samurai named Frog's lag</div>
+				<div className={styles['app-header__title']}>Froggie Social</div>
 			</div>
 		</header>
 	);

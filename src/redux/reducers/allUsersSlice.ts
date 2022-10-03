@@ -7,7 +7,7 @@ interface AllUsersSate {
 }
 
 const initialState: AllUsersSate = {
-	users: USERS_DATA,
+	users: [] ,
 };
 
 export const allUsersSlice = createSlice({
@@ -24,10 +24,14 @@ export const allUsersSlice = createSlice({
 			if (target)
 				target.followed = false;
 		},
+		setUsers: (state, action: PayloadAction<User[]>) => {
+			state.users = action.payload;
+		}
 	},
 });
 
 export const {
 	follow,
 	unfollow,
+	setUsers
 } = allUsersSlice.actions;
