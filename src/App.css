@@ -1,13 +1,13 @@
 .app-wrapper {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
 }
 
 .app-body {
-    display: flex;
+	display: flex;
 	flex: 1 1 auto;
 	justify-content: center;
 	padding: var(--padding-base-ver) var(--padding-base-hor);
@@ -16,4 +16,8 @@
 .content {
 	width: var(--conent-width);
 	height: 100%;
+}
+
+img {
+	object-fit: cover;
 }

@@ -1,2 +1,9 @@
 .user-info {
+	display: flex;
+}
+
+.avatar img {
+	border-radius: var(--border-radius-avatar);
+	height: 150px;
+	width: 150px;
 }
