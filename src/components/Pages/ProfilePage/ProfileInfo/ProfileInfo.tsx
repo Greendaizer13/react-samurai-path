@@ -27,6 +27,7 @@ const ProfileInfo: React.FC = () => {
 			<div>
 				<div className={styles['profile-info__title']}>{mainUser.firstName} {mainUser.lastName}</div>
 				<ProfileInfoItem title="Status" value={mainUser.status ?? ""}/>
+				<ProfileInfoItem title="Country" value={mainUser.location?.country ?? "No country"}/>
 				<ProfileInfoItem title="City" value={mainUser.location?.city ?? "No city"}/>
 			</div>
 		</div>

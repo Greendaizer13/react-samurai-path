@@ -2,6 +2,20 @@
 	display: flex;
 }
 
+.user-info__item {
+	margin: var(--padding-small-ver) var(--padding-small-hor);
+	align-items: center;
+	display: flex;
+}
+
+.user-info__item__status {
+	margin: var(--padding-small-ver) var(--padding-small-hor);
+	align-items: center;
+	display: flex;
+	font-style: italic;
+	font-size: 14px;
+}
+
 .avatar img {
 	border-radius: var(--border-radius-avatar);
 	height: 150px;

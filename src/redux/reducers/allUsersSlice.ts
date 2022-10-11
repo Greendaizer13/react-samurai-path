@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { User } from '../../core/types';
-import { USERS_DATA } from '../../core/mocs';
+import { UserViewModel } from '../../components/Pages/UsersPage/types/UserViewModel';
 
 interface AllUsersSate {
-	users: User[],
+	users: UserViewModel[],
 }
 
 const initialState: AllUsersSate = {
@@ -24,7 +23,7 @@ export const allUsersSlice = createSlice({
 			if (target)
 				target.followed = false;
 		},
-		setUsers: (state, action: PayloadAction<User[]>) => {
+		setUsers: (state, action: PayloadAction<UserViewModel[]>) => {
 			state.users = action.payload;
 		}
 	},
