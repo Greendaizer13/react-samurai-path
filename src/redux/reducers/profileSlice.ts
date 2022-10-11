@@ -22,7 +22,10 @@ export const profileSlice = createSlice({
 		updateNewPostText: (state, action: PayloadAction<string>) => {
 			state.newPostText = action.payload;
 		},
-		addNewPost: (state, action: PayloadAction<string>) => {
+		addNewPost: (state) => {
+			if (state.newPostText === '')
+				return;
+
 			let id = state.posts.length;
 			state.posts.push({
 				id: id,

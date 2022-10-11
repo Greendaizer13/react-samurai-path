@@ -1,10 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames';
 import styles from './NewPost.module.css';
 import {
-	ADD_NEW_POST,
 	addNewPost,
-	UPDATE_NEW_POST_TEXT,
 	updateNewPostText,
 } from '../../../../redux/reducers/profileSlice';
 import CommonButton from '../../../controls/commonButton/CommonButton';
@@ -19,7 +17,7 @@ const NewPost: React.FC<INewPost> = () => {
 	const dispatch = useAppDispatch();
 
 	const onAddNewPost = () => {
-		dispatch(addNewPost(''));
+		dispatch(addNewPost());
 		if (ref.current) {
 			ref.current.value = '';
 		}

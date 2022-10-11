@@ -18,7 +18,7 @@ const Chat: React.FC<IChat> = (props) => {
 	const ref = useRef<HTMLTextAreaElement>(null);
 
 	let onSendNewMessage = () => {
-		dispatch(sendMessage(Math.random().toString()));
+		dispatch(sendMessage());
 		if (ref.current) {
 			ref.current.value = '';
 		}
