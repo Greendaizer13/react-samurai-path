@@ -6,3 +6,8 @@ export interface UserViewModel{
 	imgUrl?: string,
 	followed: boolean,
 }
+
+export interface ChangeFollowStateModel{
+	id: number,
+	followed: boolean,
+}

@@ -1,5 +1,5 @@
 import { IMessage, User } from './types';
-import { IPost } from '../components/Pages/ProfilePage/Post/Post';
+import { IPost } from '../pages/ProfilePage/Post/Post';
 
 export const USERS_DATA: User[] = [
 	{

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import styles from './ProfileInfo.module.css';
 import ProfileInfoItem from './ProfileInfoItem/ProfileInfoItem';
-import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import axios from 'axios';
-import { setMainUser } from '../../../../redux/reducers/profileSlice';
+import { setMainUser } from '../../../redux/reducers/profileSlice';
 
 const ProfileInfo: React.FC = () => {
 	const {

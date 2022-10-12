@@ -4,9 +4,9 @@ import styles from './NewPost.module.css';
 import {
 	addNewPost,
 	updateNewPostText,
-} from '../../../../redux/reducers/profileSlice';
-import CommonButton from '../../../controls/commonButton/CommonButton';
-import { useAppDispatch } from '../../../../redux/hooks';
+} from '../../../redux/reducers/profileSlice';
+import CommonButton from '../../../components/CommonButton/CommonButton';
+import { useAppDispatch } from '../../../redux/hooks';
 
 export interface INewPost {
 	newPostText: string;

@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import styles from './Chat.module.css';
 import Replica from './Replica/Replica';
-import { IMessage, User } from '../../../../core/types';
-import CommonButton from '../../../controls/commonButton/CommonButton';
+import { IMessage, User } from '../../../core/types';
+import CommonButton from '../../../components/CommonButton/CommonButton';
 import classNames from 'classnames';
-import { useAppDispatch } from '../../../../redux/hooks';
-import { sendMessage, updateNewReplicaText } from '../../../../redux/reducers/dialogsSlice';
+import { useAppDispatch } from '../../../redux/hooks';
+import { sendMessage, updateNewReplicaText } from '../../../redux/reducers/dialogsSlice';
 
 export interface IChat {
 	messages: IMessage[];

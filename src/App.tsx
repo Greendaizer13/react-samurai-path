@@ -2,11 +2,11 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
-import ProfilePage from './components/Pages/ProfilePage/ProfilePage';
-import MessagesPage from './components/Pages/MessagesPage/MessagesPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import MessagesPage from './pages/MessagesPage/MessagesPage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { ALL_USERS_ROUTE, MESSAGES_ROUTE, PROFILE_ROUTE } from './core/constants';
-import { AllUsersPage } from './components/Pages/UsersPage/AllUsers/AllUsersPage';
+import { UsersPage } from './pages/UsersPage/Users/UsersPage';
 
 const App: React.FC = () => {
 	return (
@@ -29,7 +29,7 @@ const App: React.FC = () => {
 							exact path={'/'}
 						/>
 						<Route
-							render={() => <AllUsersPage/>}
+							render={() => <UsersPage/>}
 							path={ALL_USERS_ROUTE}
 							/>
 					</div>

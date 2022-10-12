@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './UserInfo.module.css'
-import { EMPTY_AVATAR_URL } from '../../../../core/constants';
-import CommonButton from '../../../controls/commonButton/CommonButton';
-import { UserViewModel } from '../types/UserViewModel';
-import { useAppDispatch } from '../../../../redux/hooks';
-import { follow, unfollow } from '../../../../redux/reducers/allUsersSlice';
+import { EMPTY_AVATAR_URL } from '../../../core/constants';
+import CommonButton from '../../../components/CommonButton/CommonButton';
+import { UserViewModel } from '../../../services/users/users.types';
+import { useAppDispatch } from '../../../redux/hooks';
+import { follow, unfollow } from '../../../redux/reducers/usersSlice';
+import { useChangeFollowStateQuery } from '../../../services/users/users';
 
 export const UserInfo = (props: UserViewModel) => {
-	const dispatch = useAppDispatch();
-
+	//const dispatch = useAppDispatch();
+	const name = useChangeFollowStateQuery();
 	const onFollowClick = () => {
 		if(props.followed)
 			dispatch(unfollow(props.id));

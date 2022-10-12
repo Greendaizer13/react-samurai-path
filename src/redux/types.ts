@@ -1,4 +1,4 @@
-import { IPost } from '../components/Pages/ProfilePage/Post/Post';
+import { IPost } from '../pages/ProfilePage/Post/Post';
 import { User } from '../core/types';
 
 export interface IProfileData {
