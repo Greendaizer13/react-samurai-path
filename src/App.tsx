@@ -7,6 +7,7 @@ import MessagesPage from './components/Pages/MessagesPage/MessagesPage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { ALL_USERS_ROUTE, MESSAGES_ROUTE, PROFILE_ROUTE } from './core/constants';
 import { AllUsersPage } from './components/Pages/UsersPage/AllUsers/AllUsersPage';
+import Footer from './components/Footer/Footer';
 
 const App: React.FC = () => {
 	return (
@@ -34,6 +35,7 @@ const App: React.FC = () => {
 							/>
 					</div>
 				</div>
+				<Footer/>
 			</div>
 		</BrowserRouter>
 	);
